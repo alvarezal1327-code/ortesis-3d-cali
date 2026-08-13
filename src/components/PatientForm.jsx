@@ -10,7 +10,7 @@ export function PatientForm({ onSubmitSuccess }) {
     telefono: '',
     barrio: '',
     descripcion: '',
-    tipo_ferula: 'Férula de muñeca (versión ligera)'
+    zona_cuerpo: 'Muñeca / Mano'
   });
 
   const [selectedFile, setSelectedFile] = useState(null);
@@ -89,7 +89,8 @@ export function PatientForm({ onSubmitSuccess }) {
       const payload = {
         nombre_paciente: formData.nombre_paciente.trim(),
         telefono: formData.telefono.trim(),
-        descripcion: `[Férula: ${formData.tipo_ferula}] ${formData.descripcion.trim()}`,
+        barrio: formData.barrio.trim(),
+        descripcion: `[Zona: ${formData.zona_cuerpo}] ${formData.descripcion.trim()}`,
         imagen_url: uploadedUrl,
       };
 
@@ -112,7 +113,7 @@ export function PatientForm({ onSubmitSuccess }) {
         telefono: '',
         barrio: '',
         descripcion: '',
-        tipo_ferula: 'Férula de muñeca (versión ligera)'
+        zona_cuerpo: 'Muñeca / Mano'
       });
       setSelectedFile(null);
       setImagePreview(null);
@@ -316,43 +317,32 @@ export function PatientForm({ onSubmitSuccess }) {
           <p className="text-xs text-slate-400">Selecciona la zona afectada y describe tu diagnóstico.</p>
         </div>
 
-        {/* Selector Tipo de Férula */}
+        {/* Selector Zona del Cuerpo */}
         <div>
           <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">
-            Tipo de Férula Requerida *
+            Zona del Cuerpo / Extremidad *
           </label>
-          <div className="relative">
-            <select
-              value={formData.tipo_ferula}
-              onChange={(e) => setFormData({ ...formData, tipo_ferula: e.target.value })}
-              className="w-full bg-slate-900/90 border border-slate-700/80 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-teal-500 focus:ring-2 focus:ring-teal-500/20 transition-all appearance-none"
-            >
-              <optgroup label="Muñeca y Brazo">
-                <option value="Férula de muñeca (versión ligera)">Férula de muñeca (versión ligera)</option>
-                <option value="Férula de muñeca y mano">Férula de muñeca y mano</option>
-                <option value="Férula de muñeca con estructura de celosía">Férula de muñeca con estructura de celosía</option>
-                <option value="Férula palmar">Férula palmar</option>
-                <option value="Férula de mano - RH1">Férula de mano - RH1</option>
-              </optgroup>
-              <optgroup label="Dedos de la Mano">
-                <option value="Férula de extensión de dedo">Férula de extensión de dedo</option>
-                <option value="Férula para pulgar (restrictor articular)">Férula para pulgar (restrictor articular)</option>
-                <option value="Férula para meñique y pulgar">Férula para meñique y pulgar</option>
-                <option value="Férula para dedo índice">Férula para dedo índice</option>
-                <option value="Férula para dedo meñique">Férula para dedo meñique</option>
-              </optgroup>
-              <optgroup label="Pie">
-                <option value="Férula para dedo gordo del pie">Férula para dedo gordo del pie</option>
-              </optgroup>
-              <optgroup label="Otro">
-                <option value="No estoy seguro / Evaluar foto">No estoy seguro / Evaluar foto</option>
-              </optgroup>
-            </select>
-            <div className="absolute inset-y-0 right-0 flex items-center px-4 pointer-events-none text-slate-400">
-              <svg className="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" fillRule="evenodd"></path></svg>
-            </div>
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
+            {[
+              'Muñeca / Mano',
+              'Dedo (Mano)',
+              'Antebrazo / Codo',
+              'Tobillo / Pie'
+            ].map((zona) => (
+              <button
+                key={zona}
+                type="button"
+                onClick={() => setFormData({ ...formData, zona_cuerpo: zona })}
+                className={`p-3 rounded-xl border text-xs font-semibold text-center transition-all ${
+                  formData.zona_cuerpo === zona
+                    ? 'bg-gradient-to-r from-teal-500/20 to-emerald-500/20 text-teal-300 border-teal-500 shadow-md shadow-teal-500/10'
+                    : 'bg-slate-900/60 text-slate-400 border-slate-800 hover:border-slate-700 hover:text-slate-200'
+                }`}
+              >
+                {zona}
+              </button>
+            ))}
           </div>
-          <p className="mt-1.5 text-[11px] text-slate-400">Si el paciente no está seguro, puede seleccionar "No estoy seguro" y determinaremos el modelo con su foto.</p>
         </div>
 
         {/* Descripción de la Afectación */}
