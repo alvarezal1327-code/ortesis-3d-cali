@@ -81,7 +81,7 @@ export function AdminDashboard({ authUser }) {
     const encodedUri = encodeURI(csvContent);
     const link = document.createElement('a');
     link.setAttribute('href', encodedUri);
-    link.setAttribute('download', `solicitudes_ortesis_uao_${new Date().toISOString().slice(0,10)}.csv`);
+    link.setAttribute('download', `solicitudes_ortesis_cali_${new Date().toISOString().slice(0,10)}.csv`);
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -100,7 +100,7 @@ export function AdminDashboard({ authUser }) {
         <div>
           <div className="flex items-center space-x-2">
             <span className="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-emerald-500/10 text-emerald-300 border border-emerald-500/30">
-              Panel de Administración UAO
+              Panel de Administración
             </span>
             <span className="text-xs text-slate-400">
               Biomédica • Cali
@@ -170,7 +170,7 @@ export function AdminDashboard({ authUser }) {
           <div className="text-2xl sm:text-3xl font-extrabold text-cyan-300 mt-2 font-mono">
             {impresionCount}
           </div>
-          <span className="text-[10px] text-cyan-400/80">En proceso de laboratorio UAO</span>
+          <span className="text-[10px] text-cyan-400/80">En proceso de laboratorio biomédico</span>
         </div>
 
         {/* Entregados Card */}

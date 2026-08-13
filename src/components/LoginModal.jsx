@@ -29,8 +29,8 @@ export function LoginModal({ isOpen, onClose, onLoginSuccess }) {
 
   const handleQuickDemoLogin = async (role = 'ingeniero') => {
     setLoading(true);
-    const demoEmail = role === 'admin' ? 'admin@uao.edu.co' : 'ingeniero@uao.edu.co';
-    const { user } = await loginSupabaseAuth(demoEmail, 'uao123');
+    const demoEmail = role === 'admin' ? 'admin@bioortesis.co' : 'ingeniero@bioortesis.co';
+    const { user } = await loginSupabaseAuth(demoEmail, 'bio123');
     setLoading(false);
     onLoginSuccess(user);
     onClose();
@@ -54,7 +54,7 @@ export function LoginModal({ isOpen, onClose, onLoginSuccess }) {
             <ShieldCheck className="w-8 h-8" />
           </div>
           <h2 className="text-xl sm:text-2xl font-extrabold text-white">
-            Acceso Ingenieros UAO
+            Acceso Ingenieros Biomédicos
           </h2>
           <p className="text-xs text-slate-400 mt-1">
             Plataforma de evaluación y diseño de órtesis 3D.
@@ -83,7 +83,7 @@ export function LoginModal({ isOpen, onClose, onLoginSuccess }) {
                 required
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                placeholder="ingeniero@uao.edu.co"
+                placeholder="ingeniero@bioortesis.co"
                 className="w-full bg-slate-900 border border-slate-700 rounded-xl pl-10 pr-4 py-2.5 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-teal-500 focus:ring-2 focus:ring-teal-500/20"
               />
             </div>
@@ -139,7 +139,7 @@ export function LoginModal({ isOpen, onClose, onLoginSuccess }) {
               className="py-2 px-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-emerald-300 text-xs font-semibold border border-slate-700 flex items-center justify-center gap-1.5 transition-colors"
             >
               <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
-              <span>Admin UAO</span>
+              <span>Administrador</span>
             </button>
           </div>
         </div>

@@ -19,7 +19,7 @@ export function CaseDetailModal({ item, isOpen, onClose, onRecordUpdated }) {
   const [estado, setEstado] = useState(item.estado || 'Pendiente');
   const [tipoFerula, setTipoFerula] = useState(item.tipo_ferula || SPLINT_OPTIONS[0]);
   const [notas, setNotas] = useState(item.notas || '');
-  const [ingeniero, setIngeniero] = useState(item.ingeniero_asignado || 'Dra. María Alejandra (Biomédica UAO)');
+  const [ingeniero, setIngeniero] = useState(item.ingeniero_asignado || 'Dra. María Alejandra (Ingeniería Biomédica)');
   const [isSaving, setIsSaving] = useState(false);
   const [saveSuccess, setSaveSuccess] = useState(false);
   const [showZoomPhoto, setShowZoomPhoto] = useState(false);
@@ -48,7 +48,7 @@ export function CaseDetailModal({ item, isOpen, onClose, onRecordUpdated }) {
   };
 
   const whatsappMessage = encodeURIComponent(
-    `Hola ${item.nombre_paciente}, te saludamos del programa de Ingeniería Biomédica de la UAO en Cali respecto a tu solicitud de órtesis 3D (Folio: ${item.id}).`
+    `Hola ${item.nombre_paciente}, te saludamos de la Red de Ingeniería Biomédica en Cali respecto a tu solicitud de órtesis 3D (Folio: ${item.id}).`
   );
   const whatsappUrl = `https://wa.me/57${item.telefono.replace(/\D/g, '')}?text=${whatsappMessage}`;
 

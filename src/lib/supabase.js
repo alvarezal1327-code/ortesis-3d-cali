@@ -29,8 +29,8 @@ const INITIAL_MOCK_SOLICITUDES = [
     imagen_url: 'https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?auto=format&fit=crop&w=800&q=80',
     estado: 'En Impresión 3D',
     tipo_ferula: 'Órtesis de Antebrazo Rígida (PETG)',
-    notas: 'Escaneo 3D realizado en laboratorio UAO. Relleno al 40% para alta durabilidad.',
-    ingeniero_asignado: 'Dra. María Alejandra (Biomédica UAO)'
+    notas: 'Escaneo 3D realizado en laboratorio de biomédica. Relleno al 40% para alta durabilidad.',
+    ingeniero_asignado: 'Dra. María Alejandra (Ingeniería Biomédica)'
   },
   {
     id: 'CALI-9X42B7',
@@ -55,7 +55,7 @@ const INITIAL_MOCK_SOLICITUDES = [
     imagen_url: 'https://images.unsplash.com/photo-1581594693702-fbdc51b2763b?auto=format&fit=crop&w=800&q=80',
     estado: 'En Evaluación',
     tipo_ferula: 'Férula Spica para Pulgar',
-    notas: 'Fisioterapeuta UAO revisó imágenes. Se generará modelo 3D articulado.',
+    notas: 'Fisioterapeuta revisó imágenes. Se generará modelo 3D articulado.',
     ingeniero_asignado: 'Ing. Felipe Ospina'
   },
   {
@@ -68,16 +68,16 @@ const INITIAL_MOCK_SOLICITUDES = [
     imagen_url: 'https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=800&q=80',
     estado: 'Entregado',
     tipo_ferula: 'Férula Reposo Nocturna en PLA Bio',
-    notas: 'Entregada en jornada comunitaria UAO el 10 de Agosto. Adaptación 100% exitosa.',
-    ingeniero_asignado: 'Dra. María Alejandra (Biomédica UAO)'
+    notas: 'Entregada en jornada comunitaria el 10 de Agosto. Adaptación 100% exitosa.',
+    ingeniero_asignado: 'Dra. María Alejandra (Ingeniería Biomédica)'
   }
 ];
 
 // Helper to get local storage requests
 const getLocalSolicitudes = () => {
-  const data = localStorage.getItem('uao_solicitudes_3d');
+  const data = localStorage.getItem('bioortesis_solicitudes_3d');
   if (!data) {
-    localStorage.setItem('uao_solicitudes_3d', JSON.stringify(INITIAL_MOCK_SOLICITUDES));
+    localStorage.setItem('bioortesis_solicitudes_3d', JSON.stringify(INITIAL_MOCK_SOLICITUDES));
     return INITIAL_MOCK_SOLICITUDES;
   }
   try {
@@ -88,7 +88,7 @@ const getLocalSolicitudes = () => {
 };
 
 const saveLocalSolicitudes = (items) => {
-  localStorage.setItem('uao_solicitudes_3d', JSON.stringify(items));
+  localStorage.setItem('bioortesis_solicitudes_3d', JSON.stringify(items));
 };
 
 // Generate unique Folio Code (e.g., CALI-A7B2X)

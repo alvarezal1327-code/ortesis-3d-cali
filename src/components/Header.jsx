@@ -25,14 +25,14 @@ export function Header({ activeView, setActiveView, authUser, onLogout, onOpenLo
             <div>
               <div className="flex items-center space-x-2">
                 <span className="font-extrabold text-lg sm:text-xl tracking-tight bg-gradient-to-r from-white via-slate-200 to-teal-300 bg-clip-text text-transparent">
-                  BioÓrtesis UAO
+                  BioÓrtesis Cali
                 </span>
                 <span className="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-semibold bg-teal-500/10 text-teal-300 border border-teal-500/30">
-                  Cali 3D
+                  3D Salud
                 </span>
               </div>
               <p className="text-xs text-slate-400 hidden sm:block">
-                Universidad Autónoma de Occidente • Ingeniería Biomédica
+                Red Comunitaria de Ingeniería Biomédica • Cali
               </p>
             </div>
           </div>

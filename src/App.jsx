@@ -117,8 +117,8 @@ export default function App() {
               <Cpu className="w-4 h-4" />
             </div>
             <div>
-              <span className="font-bold text-slate-200">Universidad Autónoma de Occidente (UAO)</span>
-              <p className="text-[11px] text-slate-400">Programa de Ingeniería Biomédica • Santiago de Cali, Colombia</p>
+              <span className="font-bold text-slate-200">Red Comunitaria de Ingeniería Biomédica Cali</span>
+              <p className="text-[11px] text-slate-400">Programa de Salud y Manufactura 3D • Santiago de Cali, Colombia</p>
             </div>
           </div>
 

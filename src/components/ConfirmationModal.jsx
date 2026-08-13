@@ -13,7 +13,7 @@ export function ConfirmationModal({ folioData, onClose, onTrackFolio }) {
   };
 
   const whatsappMessage = encodeURIComponent(
-    `Hola equipo de Biomédica UAO. Registré una solicitud de órtesis 3D en Cali con Folio: *${folioData.folioId}* a nombre de ${folioData.nombre}. Quisiera hacer seguimiento.`
+    `Hola equipo de Biomédica Cali. Registré una solicitud de órtesis 3D en Cali con Folio: *${folioData.folioId}* a nombre de ${folioData.nombre}. Quisiera hacer seguimiento.`
   );
   const whatsappUrl = `https://wa.me/573150000000?text=${whatsappMessage}`;
 
@@ -44,7 +44,7 @@ export function ConfirmationModal({ folioData, onClose, onTrackFolio }) {
             Folio de Seguimiento Asignado
           </h3>
           <p className="text-xs sm:text-sm text-slate-300 mt-1">
-            Guardado en el sistema de Ingeniería Biomédica UAO Cali.
+            Guardado en el sistema de Ingeniería Biomédica Cali.
           </p>
         </div>
 
@@ -79,7 +79,7 @@ export function ConfirmationModal({ folioData, onClose, onTrackFolio }) {
             ¿Qué sucede a continuación?
           </p>
           <ol className="list-decimal list-inside space-y-1.5 text-slate-300 pl-1">
-            <li>Un ingeniero biomédico UAO revisará la fotografía e información enviada.</li>
+            <li>Un ingeniero biomédico revisará la fotografía e información enviada.</li>
             <li>Te contactaremos al WhatsApp <strong>+57 {folioData.telefono}</strong> para agendar la toma de medidas o validación.</li>
             <li>Una vez impresa la órtesis en PETG biomédico, se coordinará la entrega en Cali.</li>
           </ol>
@@ -94,7 +94,7 @@ export function ConfirmationModal({ folioData, onClose, onTrackFolio }) {
             className="w-full py-3 px-4 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-slate-950 font-bold text-xs sm:text-sm flex items-center justify-center gap-2 shadow-lg shadow-emerald-500/20 transition-all"
           >
             <MessageSquare className="w-4 h-4" />
-            <span>Confirmar por WhatsApp con Biomédica UAO</span>
+            <span>Confirmar por WhatsApp con Biomédica Cali</span>
           </a>
 
           <div className="flex gap-2">

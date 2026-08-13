@@ -44,10 +44,10 @@ export function PrintCaseSheet({ item, onClose }) {
           <div className="flex justify-between items-start border-b-2 border-slate-900 pb-4 mb-6">
             <div>
               <h1 className="text-xl font-extrabold text-slate-900 tracking-tight">
-                UNIVERSIDAD AUTÓNOMA DE OCCIDENTE
+                RED DE INGENIERÍA BIOMÉDICA CALI
               </h1>
               <h2 className="text-sm font-bold text-teal-700">
-                FACULTAD DE INGENIERÍA • DEPARTAMENTO DE BIOMÉDICA
+                DEPARTAMENTO DE DISEÑO Y MANUFACTURA MÉDICA 3D
               </h2>
               <p className="text-xs text-slate-600">
                 Red de Órtesis y Férulas Personalizadas 3D — Cali, Colombia
@@ -145,7 +145,7 @@ export function PrintCaseSheet({ item, onClose }) {
             <div>
               <div className="border-b border-slate-400 mb-1 h-12"></div>
               <span className="font-bold text-slate-800 block">Firma Ingeniero Biomédico Responsable</span>
-              <span className="text-[10px] text-slate-500">{item.ingeniero_asignado || 'Facultad de Ingeniería UAO'}</span>
+              <span className="text-[10px] text-slate-500">{item.ingeniero_asignado || 'Equipo de Ingeniería Biomédica'}</span>
             </div>
             <div>
               <div className="border-b border-slate-400 mb-1 h-12"></div>

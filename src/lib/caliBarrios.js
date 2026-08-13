@@ -26,8 +26,8 @@ export const CALI_BARRIOS = [
   { comuna: "Comuna 5", barrio: "Solares" },
   { comuna: "Comuna 5", barrio: "La Rivera" },
   { comuna: "Comuna 5", barrio: "Chiminangos" },
-  // Comuna 17 (Zona Sur - UAO)
-  { comuna: "Comuna 17", barrio: "Ciudad Universitaria (UAO - Jamundí)" },
+  // Comuna 17 (Zona Sur)
+  { comuna: "Comuna 17", barrio: "Ciudad Universitaria (Zona Sur)" },
   { comuna: "Comuna 17", barrio: "El Ingenio" },
   { comuna: "Comuna 17", barrio: "Ciudad Capri" },
   { comuna: "Comuna 17", barrio: "Limonar" },

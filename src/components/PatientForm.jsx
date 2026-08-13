@@ -143,7 +143,7 @@ export function PatientForm({ onSubmitSuccess }) {
         <div className="flex items-center space-x-3 mb-3">
           <span className="px-3 py-1 rounded-full text-xs font-semibold bg-teal-500/10 text-teal-300 border border-teal-500/30 flex items-center gap-1.5">
             <Sparkles className="w-3.5 h-3.5 text-teal-400" />
-            Iniciativa Social UAO Cali
+            Iniciativa Social Cali 3D
           </span>
           <span className="px-3 py-1 rounded-full text-xs font-semibold bg-emerald-500/10 text-emerald-300 border border-emerald-500/30">
             Sin Costo • Impresión 3D
@@ -154,7 +154,7 @@ export function PatientForm({ onSubmitSuccess }) {
           Solicitud de Órtesis & Férula Anatómicamente Personalizada
         </h1>
         <p className="text-slate-300 text-sm sm:text-base leading-relaxed mb-4">
-          La <strong className="text-teal-300 font-semibold">Universidad Autónoma de Occidente (UAO)</strong> pone a disposición de la comunidad de Cali su laboratorio de Ingeniería Biomédica para diseñar e imprimir en 3D órtesis personalizadas para pacientes con lesiones musculares o esqueléticas.
+          La <strong className="text-teal-300 font-semibold">Red Comunitaria de Ingeniería Biomédica en Cali</strong> pone a disposición su laboratorio especializado para diseñar e imprimir en 3D órtesis personalizadas para pacientes con lesiones musculares o esqueléticas.
         </p>
 
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2 text-xs text-slate-300 border-t border-slate-800">
@@ -472,7 +472,7 @@ export function PatientForm({ onSubmitSuccess }) {
         <div className="p-3.5 rounded-xl bg-slate-900/60 border border-slate-800 text-[11px] text-slate-400 flex items-center gap-2.5">
           <Shield className="w-4 h-4 text-teal-400 shrink-0" />
           <span>
-            Los datos e imágenes suministradas son confidenciales y gestionados exclusivamente por la facultad de Ingeniería Biomédica UAO para fines clínicos y de manufactura médica.
+            Los datos e imágenes suministradas son confidenciales y gestionados exclusivamente por el equipo de Ingeniería Biomédica para fines clínicos y de manufactura médica.
           </span>
         </div>
 
@@ -490,7 +490,7 @@ export function PatientForm({ onSubmitSuccess }) {
           ) : (
             <>
               <Send className="w-5 h-5" />
-              <span>Enviar Solicitud a Biomédica UAO</span>
+              <span>Enviar Solicitud a Ingeniería Biomédica</span>
             </>
           )}
         </button>

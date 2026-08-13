@@ -5,7 +5,7 @@ import { fetchSolicitudByFolio } from '../lib/supabase';
 const STATUS_STEPS = [
   { key: 'Pendiente', title: 'Solicitud Recibida', desc: 'En cola para revisión inicial.' },
   { key: 'En Evaluación', title: 'Evaluación Biomédica', desc: 'Análisis fotogramétrico de la anatomía.' },
-  { key: 'En Impresión 3D', title: 'Impresión 3D Lab UAO', desc: 'Fabricación en filamento PETG/PLA.' },
+  { key: 'En Impresión 3D', title: 'Impresión 3D Lab Biomédico', desc: 'Fabricación en filamento PETG/PLA.' },
   { key: 'Entregado', title: 'Entregado al Paciente', desc: 'Ajuste clínico realizado con éxito.' }
 ];
 
@@ -75,7 +75,7 @@ export function StatusTracker({ initialFolio = '', isOpen, onClose }) {
             Seguimiento de Órtesis 3D
           </h2>
           <p className="text-xs text-slate-400">
-            Ingresa tu código de Folio (Ej. CALI-8F3A29) para verificar el estado de impresión y diseño en la UAO.
+            Ingresa tu código de Folio (Ej. CALI-8F3A29) para verificar el estado de impresión y diseño en el laboratorio.
           </p>
         </div>
 
@@ -148,14 +148,14 @@ export function StatusTracker({ initialFolio = '', isOpen, onClose }) {
                 </div>
                 <div>
                   <span className="text-slate-400 block text-[10px]">Ingeniero Responsable:</span>
-                  <span className="font-semibold text-white">{result.ingeniero_asignado || 'Laboratorio Biomédica UAO'}</span>
+                  <span className="font-semibold text-white">{result.ingeniero_asignado || 'Laboratorio Biomédico Cali'}</span>
                 </div>
               </div>
 
               {result.notas && (
                 <div className="mt-3 pt-3 border-t border-slate-800/80 text-xs text-slate-300 bg-slate-950/40 p-3 rounded-xl">
                   <span className="text-teal-400 font-semibold block text-[10px] uppercase">
-                    Notas del Biomédico UAO:
+                    Notas del Biomédico:
                   </span>
                   <p className="mt-0.5 italic text-slate-300">{result.notas}</p>
                 </div>
