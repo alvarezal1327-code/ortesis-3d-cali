@@ -116,33 +116,7 @@ export function LoginModal({ isOpen, onClose, onLoginSuccess }) {
           </button>
         </form>
 
-        {/* Quick Demo Access Bar */}
-        <div className="mt-6 pt-5 border-t border-slate-800 text-center">
-          <p className="text-[11px] text-slate-400 mb-3 flex items-center justify-center gap-1">
-            <Sparkles className="w-3.5 h-3.5 text-teal-400" />
-            Acceso Rápido para Pruebas / Demostración:
-          </p>
-
-          <div className="grid grid-cols-2 gap-2">
-            <button
-              type="button"
-              onClick={() => handleQuickDemoLogin('ingeniero')}
-              className="py-2 px-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-teal-300 text-xs font-semibold border border-slate-700 flex items-center justify-center gap-1.5 transition-colors"
-            >
-              <UserCheck className="w-3.5 h-3.5 text-teal-400" />
-              <span>Ingeniero Demo</span>
-            </button>
-
-            <button
-              type="button"
-              onClick={() => handleQuickDemoLogin('admin')}
-              className="py-2 px-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-emerald-300 text-xs font-semibold border border-slate-700 flex items-center justify-center gap-1.5 transition-colors"
-            >
-              <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
-              <span>Administrador</span>
-            </button>
-          </div>
-        </div>
+        {/* Botones de demostración eliminados para entorno de producción seguro */}
 
       </div>
     </div>

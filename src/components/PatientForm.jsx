@@ -89,6 +89,31 @@ export function PatientForm({ onSubmitSuccess }) {
 
       if (error) throw new Error(error);
 
+      // Enviar notificación por Web3Forms
+      try {
+        await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          },
+          body: JSON.stringify({
+            access_key: "94eadaf0-278b-4a9f-ad83-2bb8ddd6f764",
+            subject: `Nueva Solicitud de Órtesis 3D: ${payload.nombre_paciente}`,
+            from_name: "BioÓrtesis Cali",
+            message: `¡Hola Ingeniera! Tienes una nueva solicitud en la plataforma.\n\n` +
+                     `Folio: ${folioId}\n` +
+                     `Paciente: ${payload.nombre_paciente}\n` +
+                     `Teléfono: ${payload.telefono}\n` +
+                     `Barrio: ${payload.barrio}\n` +
+                     `Descripción: ${payload.descripcion}\n\n` +
+                     `Ingresa al panel de administración para ver la foto de la lesión y procesar el caso.`
+          })
+        });
+      } catch (err) {
+        console.warn('Error enviando notificación por correo', err);
+      }
+
       // Trigger Confetti
       try {
         confetti({
