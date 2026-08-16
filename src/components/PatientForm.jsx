@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react';
 import { Camera, Image as ImageIcon, MapPin, Phone, User, FileText, Send, Sparkles, CheckCircle2, AlertCircle, Info, Shield, Layers } from 'lucide-react';
-import { CALI_BARRIOS, BARRIOS_POPULARES } from '../lib/caliBarrios';
+import { BARRIOS_POPULARES } from '../lib/caliBarrios';
 import { uploadImagenLesion, createSolicitud } from '../lib/supabase';
 import confetti from 'canvas-confetti';
 
@@ -17,17 +17,8 @@ export function PatientForm({ onSubmitSuccess }) {
   const [imagePreview, setImagePreview] = useState(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
-  const [searchBarrio, setSearchBarrio] = useState('');
-  const [showBarrioDropdown, setShowBarrioDropdown] = useState(false);
-
   const cameraInputRef = useRef(null);
   const galleryInputRef = useRef(null);
-
-  // Filter barrios based on user typing
-  const filteredBarrios = CALI_BARRIOS.filter(b => 
-    b.barrio.toLowerCase().includes(searchBarrio.toLowerCase()) ||
-    b.comuna.toLowerCase().includes(searchBarrio.toLowerCase())
-  );
 
   const handleImageChange = (e) => {
     const file = e.target.files[0];
@@ -248,13 +239,8 @@ export function PatientForm({ onSubmitSuccess }) {
               type="text"
               required
               value={formData.barrio}
-              onFocus={() => setShowBarrioDropdown(true)}
-              onChange={(e) => {
-                setFormData({ ...formData, barrio: e.target.value });
-                setSearchBarrio(e.target.value);
-                setShowBarrioDropdown(true);
-              }}
-              placeholder="Busca o escribe tu barrio (Ej. San Fernando, Siloé, El Ingenio)..."
+              onChange={(e) => setFormData({ ...formData, barrio: e.target.value })}
+              placeholder="Escribe tu barrio o comuna (Ej. San Fernando, Siloé, El Ingenio)..."
               className="w-full bg-slate-900/90 border border-slate-700/80 rounded-xl pl-10 pr-4 py-3 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-teal-500 focus:ring-2 focus:ring-teal-500/20 transition-all"
             />
           </div>
@@ -266,10 +252,7 @@ export function PatientForm({ onSubmitSuccess }) {
               <button
                 key={barrioName}
                 type="button"
-                onClick={() => {
-                  setFormData({ ...formData, barrio: barrioName });
-                  setShowBarrioDropdown(false);
-                }}
+                onClick={() => setFormData({ ...formData, barrio: barrioName })}
                 className={`text-[11px] px-2.5 py-1 rounded-full border transition-all ${
                   formData.barrio === barrioName
                     ? 'bg-teal-500/20 text-teal-300 border-teal-500/50 font-semibold'
@@ -280,32 +263,6 @@ export function PatientForm({ onSubmitSuccess }) {
               </button>
             ))}
           </div>
-
-          {/* Barrio Dropdown */}
-          {showBarrioDropdown && searchBarrio.length > 0 && (
-            <div className="absolute z-30 left-0 right-0 mt-1 max-h-48 overflow-y-auto bg-slate-900 border border-slate-700 rounded-xl shadow-2xl divide-y divide-slate-800">
-              {filteredBarrios.length > 0 ? (
-                filteredBarrios.map((item, idx) => (
-                  <button
-                    key={idx}
-                    type="button"
-                    onClick={() => {
-                      setFormData({ ...formData, barrio: `${item.barrio} (${item.comuna})` });
-                      setShowBarrioDropdown(false);
-                    }}
-                    className="w-full text-left px-4 py-2.5 text-xs text-slate-200 hover:bg-slate-800 flex justify-between items-center"
-                  >
-                    <span className="font-medium text-white">{item.barrio}</span>
-                    <span className="text-slate-500 text-[10px]">{item.comuna}</span>
-                  </button>
-                ))
-              ) : (
-                <div className="p-3 text-xs text-slate-400 text-center">
-                  Usa tu texto libre: "{searchBarrio}"
-                </div>
-              )}
-            </div>
-          )}
         </div>
 
         {/* Section 2: Detalle de la Lesión */}
