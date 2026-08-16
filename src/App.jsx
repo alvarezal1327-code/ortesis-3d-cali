@@ -43,7 +43,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-100 flex flex-col font-sans selection:bg-teal-500 selection:text-slate-950">
+    <div className="min-h-screen flex flex-col font-sans" style={{backgroundColor:'#F5F3EF',color:'#1e293b'}}>
       
       {/* Navigation Header */}
       <Header
@@ -69,14 +69,14 @@ export default function App() {
           <AdminDashboard authUser={authUser} />
         ) : (
           <div className="max-w-md mx-auto my-16 p-8 glass-panel rounded-3xl text-center space-y-4">
-            <Shield className="w-12 h-12 text-teal-400 mx-auto" />
-            <h2 className="text-xl font-bold text-white">Acceso Restringido</h2>
-            <p className="text-xs text-slate-400">
+            <Shield className="w-12 h-12 text-sky-500 mx-auto" />
+            <h2 className="text-xl font-bold text-slate-800">Acceso Restringido</h2>
+            <p className="text-xs text-slate-500">
               Debes ser un ingeniero biomédico o administrador autenticado para acceder al panel de gestión.
             </p>
             <button
               onClick={() => setIsLoginOpen(true)}
-              className="w-full py-3 px-4 rounded-xl bg-teal-500 hover:bg-teal-400 text-slate-950 font-bold text-xs uppercase"
+              className="w-full py-3 px-4 rounded-xl bg-sky-500 hover:bg-sky-400 text-white font-bold text-xs uppercase"
             >
               Iniciar Sesión
             </button>
@@ -109,15 +109,15 @@ export default function App() {
       />
 
       {/* Footer */}
-      <footer className="border-t border-slate-800/80 bg-slate-950 py-8 px-4 text-xs text-slate-400">
+      <footer className="border-t border-sky-100 py-8 px-4 text-xs text-slate-500" style={{backgroundColor:'#EEF6FF'}}>
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left">
           
           <div className="flex items-center space-x-3">
-            <div className="w-8 h-8 rounded-lg bg-teal-500/10 text-teal-400 flex items-center justify-center border border-teal-500/20">
+            <div className="w-8 h-8 rounded-lg bg-sky-100 text-sky-500 flex items-center justify-center border border-sky-200">
               <Cpu className="w-4 h-4" />
             </div>
             <div>
-              <span className="font-bold text-slate-200">Red Comunitaria de Ingeniería Biomédica Cali</span>
+              <span className="font-bold text-slate-700">Red Comunitaria de Ingeniería Biomédica Cali</span>
               <p className="text-[11px] text-slate-400">Programa de Salud y Manufactura 3D • Santiago de Cali, Colombia</p>
             </div>
           </div>
@@ -125,21 +125,21 @@ export default function App() {
           <div className="flex items-center space-x-4 text-[11px]">
             <button
               onClick={() => setActiveView('patient')}
-              className="hover:text-teal-300 transition-colors"
+              className="hover:text-sky-500 transition-colors"
             >
               Solicitud Pacientes
             </button>
             <span>•</span>
             <button
               onClick={() => setIsStatusTrackerOpen(true)}
-              className="hover:text-teal-300 transition-colors"
+              className="hover:text-sky-500 transition-colors"
             >
               Consultar Folio
             </button>
             <span>•</span>
             <button
               onClick={() => setIsLoginOpen(true)}
-              className="hover:text-teal-300 transition-colors"
+              className="hover:text-sky-500 transition-colors"
             >
               Acceso Docentes / Biomédicos
             </button>

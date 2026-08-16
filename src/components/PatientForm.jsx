@@ -153,51 +153,51 @@ export function PatientForm({ onSubmitSuccess }) {
     <div className="max-w-3xl mx-auto py-4 sm:py-8 px-4">
       
       {/* Hero Banner Header */}
-      <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-slate-900 via-slate-900 to-teal-950 border border-teal-500/20 p-6 sm:p-8 mb-8 shadow-2xl">
-        <div className="absolute top-0 right-0 -mt-10 -mr-10 w-48 h-48 bg-teal-500/10 rounded-full blur-3xl pointer-events-none"></div>
+      <div className="relative overflow-hidden rounded-3xl p-6 sm:p-8 mb-8 shadow-lg" style={{background:'linear-gradient(135deg, #EFF8FF 0%, #E0F2FE 60%, #F0F9FF 100%)', border:'1px solid #BAE6FD'}}>
+        <div className="absolute top-0 right-0 -mt-10 -mr-10 w-48 h-48 rounded-full blur-3xl pointer-events-none" style={{backgroundColor:'rgba(56,189,248,0.12)'}}></div>
         
         <div className="flex items-center space-x-3 mb-3">
-          <span className="px-3 py-1 rounded-full text-xs font-semibold bg-teal-500/10 text-teal-300 border border-teal-500/30 flex items-center gap-1.5">
-            <Sparkles className="w-3.5 h-3.5 text-teal-400" />
+          <span className="px-3 py-1 rounded-full text-xs font-semibold flex items-center gap-1.5" style={{backgroundColor:'rgba(56,189,248,0.15)', color:'#0369a1', border:'1px solid #BAE6FD'}}>
+            <Sparkles className="w-3.5 h-3.5" style={{color:'#38BDF8'}} />
             Iniciativa Social Cali 3D
           </span>
-          <span className="px-3 py-1 rounded-full text-xs font-semibold bg-emerald-500/10 text-emerald-300 border border-emerald-500/30">
+          <span className="px-3 py-1 rounded-full text-xs font-semibold" style={{backgroundColor:'rgba(34,197,94,0.12)', color:'#15803d', border:'1px solid #86EFAC'}}>
             Sin Costo • Impresión 3D
           </span>
         </div>
 
-        <h1 className="text-2xl sm:text-4xl font-extrabold text-white tracking-tight mb-3">
-          Solicitud de Órtesis & Férula Anatómicamente Personalizada
+        <h1 className="text-2xl sm:text-4xl font-extrabold tracking-tight mb-3" style={{color:'#0c4a6e'}}>
+          Solicitud de Órtesis &amp; Férula Anatómicamente Personalizada
         </h1>
-        <p className="text-slate-300 text-sm sm:text-base leading-relaxed mb-4">
-          La <strong className="text-teal-300 font-semibold">Red Comunitaria de Ingeniería Biomédica en Cali</strong> pone a disposición su laboratorio especializado para diseñar e imprimir en 3D órtesis personalizadas para pacientes con lesiones musculares o esqueléticas.
+        <p className="text-sm sm:text-base leading-relaxed mb-4" style={{color:'#334155'}}>
+          La <strong style={{color:'#0369a1', fontWeight:600}}>Red Comunitaria de Ingeniería Biomédica en Cali</strong> pone a disposición su laboratorio especializado para diseñar e imprimir en 3D órtesis personalizadas para pacientes con lesiones musculares o esqueléticas.
         </p>
 
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2 text-xs text-slate-300 border-t border-slate-800">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2" style={{borderTop:'1px solid #BAE6FD'}}>
           <div className="flex items-center space-x-2">
-            <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
-            <span>Diseño Ergonómico a Medida</span>
+            <CheckCircle2 className="w-4 h-4 shrink-0" style={{color:'#22c55e'}} />
+            <span style={{color:'#334155', fontSize:'0.75rem'}}>Diseño Ergonomíco a Medida</span>
           </div>
           <div className="flex items-center space-x-2">
-            <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
-            <span>Materiales Biomédicos PETG/PLA</span>
+            <CheckCircle2 className="w-4 h-4 shrink-0" style={{color:'#22c55e'}} />
+            <span style={{color:'#334155', fontSize:'0.75rem'}}>Materiales Biomédicos PETG/PLA</span>
           </div>
           <div className="flex items-center space-x-2">
-            <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
-            <span>Supervisión de Especialistas</span>
+            <CheckCircle2 className="w-4 h-4 shrink-0" style={{color:'#22c55e'}} />
+            <span style={{color:'#334155', fontSize:'0.75rem'}}>Supervisión de Especialistas</span>
           </div>
         </div>
       </div>
 
       {/* Main Request Form */}
-      <form onSubmit={handleSubmit} className="glass-panel rounded-3xl p-6 sm:p-8 space-y-6 shadow-xl border border-slate-800">
+      <form onSubmit={handleSubmit} className="bg-white rounded-3xl p-6 sm:p-8 space-y-6 shadow-lg" style={{border:'1px solid #E0F2FE'}}>
         
-        <div className="border-b border-slate-800 pb-4">
-          <h2 className="text-lg font-bold text-white flex items-center gap-2">
-            <User className="w-5 h-5 text-teal-400" />
+        <div style={{borderBottom:'1px solid #E0F2FE'}} className="pb-4">
+          <h2 className="text-lg font-bold flex items-center gap-2" style={{color:'#0c4a6e'}}>
+            <User className="w-5 h-5" style={{color:'#38BDF8'}} />
             1. Datos del Paciente
           </h2>
-          <p className="text-xs text-slate-400">Ingresa tus datos personales para contactarte en Cali.</p>
+          <p className="text-xs" style={{color:'#64748b'}}>Ingresa tus datos personales para contactarte en Cali.</p>
         </div>
 
         {/* Error Notification */}
@@ -215,7 +215,7 @@ export function PatientForm({ onSubmitSuccess }) {
           
           {/* Nombre Completo */}
           <div>
-            <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">
+            <label className="block text-xs font-semibold uppercase tracking-wider mb-2" style={{color:'#475569'}}>
               Nombre Completo *
             </label>
             <div className="relative">
@@ -225,18 +225,21 @@ export function PatientForm({ onSubmitSuccess }) {
                 value={formData.nombre_paciente}
                 onChange={(e) => setFormData({ ...formData, nombre_paciente: e.target.value })}
                 placeholder="Ej. María Fernanda Osorio"
-                className="w-full bg-slate-900/90 border border-slate-700/80 rounded-xl px-4 py-3 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-teal-500 focus:ring-2 focus:ring-teal-500/20 transition-all"
+                className="w-full rounded-xl px-4 py-3 text-sm placeholder-slate-400 focus:outline-none transition-all"
+                style={{backgroundColor:'#F8FAFC', border:'1px solid #BAE6FD', color:'#1e293b'}}
+                onFocus={e => e.target.style.boxShadow='0 0 0 3px rgba(56,189,248,0.2)'}
+                onBlur={e => e.target.style.boxShadow='none'}
               />
             </div>
           </div>
 
           {/* Teléfono WhatsApp */}
           <div>
-            <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">
+            <label className="block text-xs font-semibold uppercase tracking-wider mb-2" style={{color:'#475569'}}>
               Teléfono de Contacto (WhatsApp) *
             </label>
             <div className="relative">
-              <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-500 text-sm font-medium">
+              <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-sm font-medium" style={{color:'#94a3b8'}}>
                 +57
               </div>
               <input
@@ -246,7 +249,10 @@ export function PatientForm({ onSubmitSuccess }) {
                 onChange={(e) => setFormData({ ...formData, telefono: e.target.value.replace(/\D/g, '') })}
                 placeholder="315 123 4567"
                 maxLength={10}
-                className="w-full bg-slate-900/90 border border-slate-700/80 rounded-xl pl-12 pr-4 py-3 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-teal-500 focus:ring-2 focus:ring-teal-500/20 transition-all"
+                className="w-full rounded-xl pl-12 pr-4 py-3 text-sm placeholder-slate-400 focus:outline-none transition-all"
+                style={{backgroundColor:'#F8FAFC', border:'1px solid #BAE6FD', color:'#1e293b'}}
+                onFocus={e => e.target.style.boxShadow='0 0 0 3px rgba(56,189,248,0.2)'}
+                onBlur={e => e.target.style.boxShadow='none'}
               />
             </div>
           </div>
@@ -255,24 +261,27 @@ export function PatientForm({ onSubmitSuccess }) {
 
         {/* Barrio / Comuna en Cali */}
         <div className="relative">
-          <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">
+          <label className="block text-xs font-semibold uppercase tracking-wider mb-2" style={{color:'#475569'}}>
             Barrio o Comuna en Cali *
           </label>
           <div className="relative">
-            <MapPin className="absolute left-3.5 top-3.5 w-4 h-4 text-teal-400 pointer-events-none" />
+            <MapPin className="absolute left-3.5 top-3.5 w-4 h-4 pointer-events-none" style={{color:'#38BDF8'}} />
             <input
               type="text"
               required
               value={formData.barrio}
               onChange={(e) => setFormData({ ...formData, barrio: e.target.value })}
               placeholder="Escribe tu barrio o comuna (Ej. San Fernando, Siloé, El Ingenio)..."
-              className="w-full bg-slate-900/90 border border-slate-700/80 rounded-xl pl-10 pr-4 py-3 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-teal-500 focus:ring-2 focus:ring-teal-500/20 transition-all"
+              className="w-full rounded-xl pl-10 pr-4 py-3 text-sm placeholder-slate-400 focus:outline-none transition-all"
+              style={{backgroundColor:'#F8FAFC', border:'1px solid #BAE6FD', color:'#1e293b'}}
+              onFocus={e => e.target.style.boxShadow='0 0 0 3px rgba(56,189,248,0.2)'}
+              onBlur={e => e.target.style.boxShadow='none'}
             />
           </div>
 
           {/* Quick Barrio Chips */}
           <div className="flex flex-wrap gap-1.5 mt-2">
-            <span className="text-[11px] text-slate-400 self-center mr-1">Frecuentes:</span>
+            <span className="text-[11px] self-center mr-1" style={{color:'#94a3b8'}}>Frecuentes:</span>
             {BARRIOS_POPULARES.slice(0, 6).map((barrioName) => (
               <button
                 key={barrioName}
@@ -280,9 +289,13 @@ export function PatientForm({ onSubmitSuccess }) {
                 onClick={() => setFormData({ ...formData, barrio: barrioName })}
                 className={`text-[11px] px-2.5 py-1 rounded-full border transition-all ${
                   formData.barrio === barrioName
-                    ? 'bg-teal-500/20 text-teal-300 border-teal-500/50 font-semibold'
-                    : 'bg-slate-800/60 text-slate-400 border-slate-700 hover:text-slate-200'
+                    ? 'font-semibold'
+                    : ''
                 }`}
+                style={formData.barrio === barrioName
+                  ? {backgroundColor:'rgba(56,189,248,0.15)', color:'#0369a1', border:'1px solid #38BDF8'}
+                  : {backgroundColor:'#F1F5F9', color:'#64748b', border:'1px solid #e2e8f0'}
+                }
               >
                 {barrioName}
               </button>
@@ -291,17 +304,17 @@ export function PatientForm({ onSubmitSuccess }) {
         </div>
 
         {/* Section 2: Detalle de la Lesión */}
-        <div className="border-b border-slate-800 pb-4 pt-2">
-          <h2 className="text-lg font-bold text-white flex items-center gap-2">
-            <FileText className="w-5 h-5 text-teal-400" />
+        <div className="pb-4 pt-2" style={{borderBottom:'1px solid #E0F2FE'}}>
+          <h2 className="text-lg font-bold flex items-center gap-2" style={{color:'#0c4a6e'}}>
+            <FileText className="w-5 h-5" style={{color:'#38BDF8'}} />
             2. Detalle de la Lesión
           </h2>
-          <p className="text-xs text-slate-400">Selecciona la zona afectada y describe tu diagnóstico.</p>
+          <p className="text-xs" style={{color:'#64748b'}}>Selecciona la zona afectada y describe tu diagnóstico.</p>
         </div>
 
         {/* Selector Zona del Cuerpo */}
         <div>
-          <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">
+          <label className="block text-xs font-semibold uppercase tracking-wider mb-2" style={{color:'#475569'}}>
             Zona del Cuerpo / Extremidad *
           </label>
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
@@ -315,11 +328,11 @@ export function PatientForm({ onSubmitSuccess }) {
                 key={zona}
                 type="button"
                 onClick={() => setFormData({ ...formData, zona_cuerpo: zona })}
-                className={`p-3 rounded-xl border text-xs font-semibold text-center transition-all ${
-                  formData.zona_cuerpo === zona
-                    ? 'bg-gradient-to-r from-teal-500/20 to-emerald-500/20 text-teal-300 border-teal-500 shadow-md shadow-teal-500/10'
-                    : 'bg-slate-900/60 text-slate-400 border-slate-800 hover:border-slate-700 hover:text-slate-200'
-                }`}
+                className={`p-3 rounded-xl border text-xs font-semibold text-center transition-all`}
+                style={formData.zona_cuerpo === zona
+                  ? {background:'linear-gradient(135deg,rgba(56,189,248,0.15),rgba(59,130,246,0.15))', color:'#0369a1', border:'1px solid #38BDF8', boxShadow:'0 2px 8px rgba(56,189,248,0.15)'}
+                  : {backgroundColor:'#F8FAFC', color:'#64748b', border:'1px solid #e2e8f0'}
+                }
               >
                 {zona}
               </button>
@@ -329,7 +342,7 @@ export function PatientForm({ onSubmitSuccess }) {
 
         {/* Descripción de la Afectación */}
         <div>
-          <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">
+          <label className="block text-xs font-semibold uppercase tracking-wider mb-2" style={{color:'#475569'}}>
             Descripción de la Afectación / Lesión *
           </label>
           <textarea
@@ -338,17 +351,20 @@ export function PatientForm({ onSubmitSuccess }) {
             value={formData.descripcion}
             onChange={(e) => setFormData({ ...formData, descripcion: e.target.value })}
             placeholder="Describe qué sientes (dolor, inmovilización requerida, inflamación, recomendación del médico u ortopedista, etc.)."
-            className="w-full bg-slate-900/90 border border-slate-700/80 rounded-xl p-4 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-teal-500 focus:ring-2 focus:ring-teal-500/20 transition-all resize-none"
+            className="w-full rounded-xl p-4 text-sm placeholder-slate-400 focus:outline-none transition-all resize-none"
+            style={{backgroundColor:'#F8FAFC', border:'1px solid #BAE6FD', color:'#1e293b'}}
+            onFocus={e => e.target.style.boxShadow='0 0 0 3px rgba(56,189,248,0.2)'}
+            onBlur={e => e.target.style.boxShadow='none'}
           />
         </div>
 
         {/* Section 3: Fotografía de la Lesión */}
-        <div className="border-b border-slate-800 pb-4 pt-2">
-          <h2 className="text-lg font-bold text-white flex items-center gap-2">
-            <Camera className="w-5 h-5 text-teal-400" />
+        <div className="pb-4 pt-2" style={{borderBottom:'1px solid #E0F2FE'}}>
+          <h2 className="text-lg font-bold flex items-center gap-2" style={{color:'#0c4a6e'}}>
+            <Camera className="w-5 h-5" style={{color:'#38BDF8'}} />
             3. Fotografía de la Lesión
           </h2>
-          <p className="text-xs text-slate-400">Sube una foto clara de la zona afectada para que nuestros ingenieros biomédicos evalúen la geometría 3D.</p>
+          <p className="text-xs" style={{color:'#64748b'}}>Sube una foto clara de la zona afectada para que nuestros ingenieros biomédicos evalúen la geometría 3D.</p>
         </div>
 
         {/* Hidden File Inputs */}
@@ -369,15 +385,15 @@ export function PatientForm({ onSubmitSuccess }) {
         />
 
         {!imagePreview ? (
-          <div className="border-2 border-dashed border-slate-700 hover:border-teal-500/60 rounded-2xl p-6 text-center bg-slate-900/50 transition-colors">
-            <div className="w-12 h-12 rounded-full bg-teal-500/10 text-teal-400 flex items-center justify-center mx-auto mb-3">
+          <div className="border-2 border-dashed rounded-2xl p-6 text-center transition-colors" style={{borderColor:'#BAE6FD', backgroundColor:'#F0F9FF'}}>
+            <div className="w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3" style={{backgroundColor:'rgba(56,189,248,0.15)', color:'#38BDF8'}}>
               <Camera className="w-6 h-6" />
             </div>
             
-            <h3 className="text-sm font-semibold text-white mb-1">
+            <h3 className="text-sm font-semibold mb-1" style={{color:'#0c4a6e'}}>
               Adjuntar Foto de la Extremidad
             </h3>
-            <p className="text-xs text-slate-400 mb-4 max-w-sm mx-auto">
+            <p className="text-xs mb-4 max-w-sm mx-auto" style={{color:'#64748b'}}>
               Toma una foto con buena iluminación enfocando la articulación o extremidad afectada.
             </p>
 
@@ -385,7 +401,8 @@ export function PatientForm({ onSubmitSuccess }) {
               <button
                 type="button"
                 onClick={() => cameraInputRef.current?.click()}
-                className="w-full sm:w-auto px-4 py-2.5 rounded-xl bg-teal-600 hover:bg-teal-500 text-slate-950 font-bold text-xs flex items-center justify-center gap-2 shadow-lg shadow-teal-500/20 transition-transform active:scale-95"
+                className="w-full sm:w-auto px-4 py-2.5 rounded-xl font-bold text-xs flex items-center justify-center gap-2 shadow-lg transition-transform active:scale-95"
+                style={{backgroundColor:'#38BDF8', color:'#0c4a6e', boxShadow:'0 4px 12px rgba(56,189,248,0.3)'}}
               >
                 <Camera className="w-4 h-4" />
                 <span>Usar Cámara Móvil</span>
@@ -394,15 +411,16 @@ export function PatientForm({ onSubmitSuccess }) {
               <button
                 type="button"
                 onClick={() => galleryInputRef.current?.click()}
-                className="w-full sm:w-auto px-4 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 font-semibold text-xs flex items-center justify-center gap-2 border border-slate-700 transition-colors"
+                className="w-full sm:w-auto px-4 py-2.5 rounded-xl font-semibold text-xs flex items-center justify-center gap-2 transition-colors"
+                style={{backgroundColor:'white', color:'#334155', border:'1px solid #BAE6FD'}}
               >
-                <ImageIcon className="w-4 h-4 text-teal-400" />
+                <ImageIcon className="w-4 h-4" style={{color:'#38BDF8'}} />
                 <span>Elegir de Galería</span>
               </button>
             </div>
 
-            <div className="mt-4 text-[11px] text-slate-500 flex items-center justify-center gap-1">
-              <Info className="w-3.5 h-3.5 text-slate-400" />
+            <div className="mt-4 text-[11px] flex items-center justify-center gap-1" style={{color:'#94a3b8'}}>
+              <Info className="w-3.5 h-3.5" style={{color:'#94a3b8'}} />
               <span>Formatos soportados: JPG, PNG, WEBP (Máx. 15MB)</span>
             </div>
           </div>
@@ -451,8 +469,8 @@ export function PatientForm({ onSubmitSuccess }) {
         )}
 
         {/* Privacy Note */}
-        <div className="p-3.5 rounded-xl bg-slate-900/60 border border-slate-800 text-[11px] text-slate-400 flex items-center gap-2.5">
-          <Shield className="w-4 h-4 text-teal-400 shrink-0" />
+        <div className="p-3.5 rounded-xl text-[11px] flex items-center gap-2.5" style={{backgroundColor:'#F0F9FF', border:'1px solid #BAE6FD', color:'#475569'}}>
+          <Shield className="w-4 h-4 shrink-0" style={{color:'#38BDF8'}} />
           <span>
             Los datos e imágenes suministradas son confidenciales y gestionados exclusivamente por el equipo de Ingeniería Biomédica para fines clínicos y de manufactura médica.
           </span>
@@ -462,11 +480,12 @@ export function PatientForm({ onSubmitSuccess }) {
         <button
           type="submit"
           disabled={isSubmitting}
-          className="w-full py-4 px-6 rounded-2xl bg-gradient-to-r from-teal-500 via-emerald-500 to-teal-400 hover:from-teal-400 hover:to-emerald-400 text-slate-950 font-extrabold text-base shadow-xl shadow-teal-500/25 transition-all duration-300 hover:scale-[1.01] active:scale-98 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center space-x-2"
+          className="w-full py-4 px-6 rounded-2xl font-extrabold text-base shadow-xl transition-all duration-300 hover:scale-[1.01] active:scale-98 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center space-x-2"
+          style={{background:'linear-gradient(135deg,#38BDF8,#0EA5E9)', color:'white', boxShadow:'0 8px 24px rgba(56,189,248,0.35)'}}
         >
           {isSubmitting ? (
             <>
-              <div className="w-5 h-5 border-2 border-slate-950 border-t-transparent rounded-full animate-spin"></div>
+              <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
               <span>Procesando Solicitud e Imagen...</span>
             </>
           ) : (

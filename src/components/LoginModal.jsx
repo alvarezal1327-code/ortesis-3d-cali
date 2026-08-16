@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { ShieldCheck, Lock, Mail, AlertCircle, X, Key, Sparkles, UserCheck } from 'lucide-react';
-import { loginSupabaseAuth, isSupabaseConfigured } from '../lib/supabase';
+import { ShieldCheck, Lock, Mail, AlertCircle, X } from 'lucide-react';
+import { loginSupabaseAuth } from '../lib/supabase';
 
 export function LoginModal({ isOpen, onClose, onLoginSuccess }) {
   const [email, setEmail] = useState('');
@@ -27,44 +27,38 @@ export function LoginModal({ isOpen, onClose, onLoginSuccess }) {
     }
   };
 
-  const handleQuickDemoLogin = async (role = 'ingeniero') => {
-    setLoading(true);
-    const demoEmail = role === 'admin' ? 'admin@bioortesis.co' : 'ingeniero@bioortesis.co';
-    const { user } = await loginSupabaseAuth(demoEmail, 'bio123');
-    setLoading(false);
-    onLoginSuccess(user);
-    onClose();
-  };
-
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-md animate-fade-in">
-      <div className="relative w-full max-w-md rounded-3xl glass-panel p-6 sm:p-8 border border-slate-800 shadow-2xl overflow-hidden">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4" style={{backgroundColor:'rgba(240,249,255,0.85)', backdropFilter:'blur(12px)'}}>
+      <div className="relative w-full max-w-md rounded-3xl p-6 sm:p-8 overflow-hidden" style={{backgroundColor:'white', border:'1px solid #BAE6FD', boxShadow:'0 24px 60px rgba(56,189,248,0.18)'}}>
         
         {/* Close Button */}
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 p-2 rounded-full text-slate-400 hover:text-white hover:bg-slate-800 transition-colors"
+          className="absolute top-4 right-4 p-2 rounded-full transition-colors"
+          style={{color:'#94a3b8'}}
+          onMouseEnter={e => { e.target.style.color='#1e293b'; e.target.style.backgroundColor='#F1F5F9'; }}
+          onMouseLeave={e => { e.target.style.color='#94a3b8'; e.target.style.backgroundColor='transparent'; }}
         >
           <X className="w-5 h-5" />
         </button>
 
         {/* Title */}
         <div className="text-center mb-6">
-          <div className="w-14 h-14 rounded-2xl bg-gradient-to-tr from-teal-600 to-emerald-500 text-slate-950 flex items-center justify-center mx-auto mb-3 shadow-lg shadow-teal-500/20">
-            <ShieldCheck className="w-8 h-8" />
+          <div className="w-14 h-14 rounded-2xl flex items-center justify-center mx-auto mb-3 shadow-lg" style={{background:'linear-gradient(135deg,#38BDF8,#0EA5E9)', boxShadow:'0 8px 24px rgba(56,189,248,0.3)'}}>
+            <ShieldCheck className="w-8 h-8 text-white" />
           </div>
-          <h2 className="text-xl sm:text-2xl font-extrabold text-white">
+          <h2 className="text-xl sm:text-2xl font-extrabold" style={{color:'#0c4a6e'}}>
             Acceso Ingenieros Biomédicos
           </h2>
-          <p className="text-xs text-slate-400 mt-1">
+          <p className="text-xs mt-1" style={{color:'#64748b'}}>
             Plataforma de evaluación y diseño de órtesis 3D.
           </p>
         </div>
 
         {/* Error notification */}
         {errorMsg && (
-          <div className="p-3.5 rounded-xl bg-red-950/80 border border-red-800/80 text-red-200 text-xs flex items-start space-x-2.5 mb-4">
-            <AlertCircle className="w-4 h-4 text-red-400 shrink-0 mt-0.5" />
+          <div className="p-3.5 rounded-xl text-xs flex items-start space-x-2.5 mb-4" style={{backgroundColor:'#FFF1F2', border:'1px solid #FECACA', color:'#991b1b'}}>
+            <AlertCircle className="w-4 h-4 shrink-0 mt-0.5" style={{color:'#ef4444'}} />
             <span>{errorMsg}</span>
           </div>
         )}
@@ -73,36 +67,42 @@ export function LoginModal({ isOpen, onClose, onLoginSuccess }) {
           
           {/* Email */}
           <div>
-            <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5">
-              Correo Institucional / Supabase Auth
+            <label className="block text-xs font-semibold uppercase tracking-wider mb-1.5" style={{color:'#475569'}}>
+              Correo Electrónico
             </label>
             <div className="relative">
-              <Mail className="absolute left-3.5 top-3.5 w-4 h-4 text-slate-400" />
+              <Mail className="absolute left-3.5 top-3.5 w-4 h-4" style={{color:'#94a3b8'}} />
               <input
                 type="email"
                 required
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                placeholder="ingeniero@bioortesis.co"
-                className="w-full bg-slate-900 border border-slate-700 rounded-xl pl-10 pr-4 py-2.5 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-teal-500 focus:ring-2 focus:ring-teal-500/20"
+                placeholder="alvarezal1327@gmail.com"
+                className="w-full rounded-xl pl-10 pr-4 py-2.5 text-sm placeholder-slate-400 focus:outline-none transition-all"
+                style={{backgroundColor:'#F8FAFC', border:'1px solid #BAE6FD', color:'#1e293b'}}
+                onFocus={e => e.target.style.boxShadow='0 0 0 3px rgba(56,189,248,0.2)'}
+                onBlur={e => e.target.style.boxShadow='none'}
               />
             </div>
           </div>
 
           {/* Password */}
           <div>
-            <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5">
+            <label className="block text-xs font-semibold uppercase tracking-wider mb-1.5" style={{color:'#475569'}}>
               Contraseña
             </label>
             <div className="relative">
-              <Lock className="absolute left-3.5 top-3.5 w-4 h-4 text-slate-400" />
+              <Lock className="absolute left-3.5 top-3.5 w-4 h-4" style={{color:'#94a3b8'}} />
               <input
                 type="password"
                 required
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="••••••••"
-                className="w-full bg-slate-900 border border-slate-700 rounded-xl pl-10 pr-4 py-2.5 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-teal-500 focus:ring-2 focus:ring-teal-500/20"
+                className="w-full rounded-xl pl-10 pr-4 py-2.5 text-sm placeholder-slate-400 focus:outline-none transition-all"
+                style={{backgroundColor:'#F8FAFC', border:'1px solid #BAE6FD', color:'#1e293b'}}
+                onFocus={e => e.target.style.boxShadow='0 0 0 3px rgba(56,189,248,0.2)'}
+                onBlur={e => e.target.style.boxShadow='none'}
               />
             </div>
           </div>
@@ -110,13 +110,12 @@ export function LoginModal({ isOpen, onClose, onLoginSuccess }) {
           <button
             type="submit"
             disabled={loading}
-            className="w-full py-3 px-4 rounded-xl bg-gradient-to-r from-teal-500 to-emerald-500 hover:from-teal-400 hover:to-emerald-400 text-slate-950 font-bold text-xs uppercase tracking-wider shadow-lg shadow-teal-500/20 transition-all disabled:opacity-50"
+            className="w-full py-3 px-4 rounded-xl font-bold text-xs uppercase tracking-wider shadow-lg transition-all disabled:opacity-50"
+            style={{background:'linear-gradient(135deg,#38BDF8,#0EA5E9)', color:'white', boxShadow:'0 4px 16px rgba(56,189,248,0.35)'}}
           >
             {loading ? 'Autenticando...' : 'Iniciar Sesión'}
           </button>
         </form>
-
-        {/* Botones de demostración eliminados para entorno de producción seguro */}
 
       </div>
     </div>
